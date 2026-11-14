@@ -1,0 +1,25 @@
+.section { padding: clamp(100px, 14vw, 200px) 0 0; border-top: 1px solid var(--line); position: relative; overflow: hidden; }
+.section::before {
+  content: ""; position: absolute; left: 50%; bottom: -40%; width: 120%; aspect-ratio: 2; transform: translateX(-50%);
+  background: radial-gradient(closest-side, rgba(212, 255, 42, 0.12), transparent); pointer-events: none;
+}
+
+.big { display: block; margin-top: 36px; font-size: clamp(72px, 14.5vw, 250px); }
+.l1 { display: block; color: transparent; -webkit-text-stroke: 1.5px var(--fg); }
+.l2 { display: flex; align-items: center; gap: 0.15em; color: var(--accent); }
+.arrow { display: inline-block; font-family: var(--sans); font-weight: 300; font-size: 0.6em; transition: transform 0.5s var(--ease); }
+.big:hover .arrow { transform: translateX(0.25em) rotate(-35deg); }
+
+.row { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 24px; margin-top: clamp(48px, 7vw, 96px); padding-top: 28px; border-top: 1px solid var(--line); position: relative; }
+.email, .col { display: flex; flex-direction: column; gap: 8px; text-align: left; }
+.emailText { font-size: clamp(20px, 2.2vw, 30px); font-weight: 500; text-decoration: underline; text-decoration-color: var(--line-strong); text-underline-offset: 6px; transition: text-decoration-color 0.2s; }
+.email:hover .emailText { text-decoration-color: var(--accent); }
+.socials { display: flex; flex-wrap: wrap; gap: 6px 16px; }
+.socials a:hover { color: var(--accent); }
+
+.footer { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; padding-top: 64px; padding-bottom: 28px; font-size: 11px; position: relative; }
+.footer a:hover { color: var(--fg); }
+
+@media (max-width: 860px) {
+  .row { grid-template-columns: 1fr; }
+}
